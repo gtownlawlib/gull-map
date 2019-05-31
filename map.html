@@ -1,0 +1,187 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Map</title>
+
+</head>
+
+<body>
+
+<h1>Map Demo Page</h1>
+
+<form method="get">
+<label>Call Number
+  <input name="callnumber" type="text" value="KF6377.N4 F56 1995">
+</label>
+<label>Location Code
+  <input name="location" type="text" value="stack">
+</label>
+<input type="submit">
+</form>
+
+<p>Sample call numbers for testing:</p>
+<ul>
+  <li><a href="?callnumber=KFN+5051+.A2&location=stack">KFN 5051 .A2 (third floor stacks)</a></li>
+  <li><a href="?callnumber=KFD+1245+.A19&location=stack">KFD 1245 .A19 (fourth floor stacks)</a></li>
+  <li><a href="?callnumber=HC+243.25+.U5E3&location=stack">KF6377.N4 F56 1995 (fifth floor stacks)</a></li>
+  <li><a href="?callnumber=KF35+.A26&location=rrmez">KF35 .A26 (third floor mezzanine)</a></li>
+</ul>
+
+<div id="mapit-output"></div>
+<div id="library-map" style="max-width:800px;"></div>
+
+
+<h2>Locations &amp; Descriptions</h2>
+<a href="?loclist=true">Show locations</a>
+<table id="loc-table">
+<tr><th>Code</th><th>Name</th><th>Description</th><th>Show Ranges</th></tr>
+</table>
+
+</body>
+
+<script src="../js/locCallClass.js"></script>
+
+<script type="text/javascript">
+
+  // // Utility for testing, validating call numbers.
+  // var urlParams = new URLSearchParams(window.location.search);
+  // callnumber = urlParams.get('callnumber');
+  //
+  // // Create a new locCallClass instance.
+  // var loc = new locCallClass;
+  //
+  // // Normalize the call number.
+  // var cnNorm = loc.returnNormLcCall(callnumber);
+  // console.log(cnNorm);
+  //
+  // // The class letters are always the first three characters.
+  // var cnClass = cnNorm.slice(0,3);
+  //
+  // // The class number is always the next four characters.
+  // var cnNumber = cnNorm.slice(3,7);
+  //
+  // console.log(cnClass);
+  // console.log(cnNumber);
+  //
+  // var pattern = /([A-Z]{1,3})\s*(\d{1,4})(\.\d+)*(.+)*/ig;
+  // var result = pattern.exec(cnNorm);
+  // console.log(result);
+
+  //
+  // // CN elements after the class letters are delimited by single spaces.
+  // // Split them into an array.
+  // var cnNumString = cnNorm.slice(3);
+  // console.log('Number string:' + cnNumString);
+  // cnNumString = cnNumString.trim();
+  // var cnArray = cnNumString.split(" ");
+  //
+  // // The first element in the array should be the classification number.
+  // var cnNumber = cnArray[0];
+  //
+  //
+  // console.log('Numbers: ' + cnNumString);
+  // console.log(cnArray);
+  //
+  // // The second element in the array is usually a Cutter number.
+  // if (cnArray.length > 1) {
+  //   cnCutter1 = cnArray[1];
+  //   console.log('Class Letters: ' + cnClass);
+  //   console.log('Class Numbers: ' + cnNumber);
+  //   console.log('First Cutter: ' + cnCutter1);
+  // } else {
+  //   cnCutter1 = '';
+  // }
+  //
+  // // Rebuild the call number.
+  // var newCallnumber = cnClass + cnNumber + ' ' + cnCutter1;
+  // console.log(newCallnumber);
+
+
+</script>
+
+<!--
+k     1
+k  9999
+kfn5051 a2
+hc  243.25 u5 e3
+-->
+
+<script src="../js/mapit.js"></script>
+
+<script type="text/javascript">
+
+// This is a quick troubleshooting utility that provides info about the data
+// fles we've created.
+
+var urlParams = new URLSearchParams(window.location.search);
+loclist = urlParams.get('loclist');
+
+if(loclist) {
+  var locations = [
+    "cbrsv",
+    "cresv",
+    "fedrs",
+    "intl",
+    "jrnld",
+    "jrnli",
+    "liblg",
+    "media",
+    "nejl",
+    "newbk",
+    "readr",
+    "refnc",
+    "resve",
+    "rmedi",
+    "rrmez",
+    "rrsa",
+    "specl",
+    "sprsd",
+    "stack",
+    "state"
+  ];
+
+  for (i = 0; i < locations.length; i++) {
+    var libLocation = locations[i];
+    //console.log(libLocation);
+    loadLocationDetails(libLocation);
+
+  };
+}
+
+function loadLocationDetails(libLocation) {
+  // Load the stack data for this location.
+  var path = dataUrl + 'data-' + libLocation.toLowerCase() + ".json";
+  var httpRequest = new XMLHttpRequest();
+  httpRequest.onreadystatechange = function() {
+      if (httpRequest.readyState === 4) {
+          if (httpRequest.status === 200) {
+            var location_data = JSON.parse(httpRequest.responseText);
+            showDetails(libLocation, location_data);
+          } else {
+            var div = document.getElementById('mapit-output');
+            div.innerHTML += dataLoadError;
+            throw new Error("Could not load stack data for location: " + libLocation);
+          }
+      }
+  };
+  httpRequest.open('GET', path);
+  httpRequest.send();
+}
+
+function showDetails(libLocation, location_data) {
+  // console.log(location_data);
+  var locTable = document.getElementById('loc-table');
+  var outputString = '<tr>';
+  outputString += '<td>' + libLocation + '</td>\n';
+  outputString += '<td>' + location_data.name + '</td>\n';
+  outputString += '<td>' + location_data.description + '</td>\n';
+  outputString += '<td>' + location_data.showRanges + '</td>\n';
+  outputString += '</tr>\n'
+  locTable.innerHTML += outputString;
+}
+</script>
+
+</html>
