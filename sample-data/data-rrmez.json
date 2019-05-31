@@ -1,0 +1,224 @@
+{
+  "name": "Reading Room Mezzanine",
+  "description": "The mezzanine is on the third floor of the library. Enter via the stairs in the Reading Room on the second floor, or go to the Circulation Desk on the second floor for ADA access via elevator.",
+  "showRanges": false,
+  "ranges":[
+    {
+      "label": "3-007a",
+      "lc_from": "KF 8 .U5",
+      "lc_to": "KF 20 .C66",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-007b",
+      "lc_from": "KF 21 .A35",
+      "lc_to": "KF 22 .R38",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-007c",
+      "lc_from": "KF 22 .R84",
+      "lc_to": "KF 22 .W3",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-007d",
+      "lc_from": "KF\n 25 .C44",
+      "lc_to": "KF\n 26 .F5",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-007",
+      "lc_from": "KF\n 26 .E5",
+      "lc_to": "KF\n 26 .J8",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-008",
+      "lc_from": "KF\n 26 .J8",
+      "lc_to": "KF\n 27 .E4",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-009",
+      "lc_from": "KF\n 27 .E4",
+      "lc_to": "KF\n 27 .G8",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-010",
+      "lc_from": "KF\n 27 .G8",
+      "lc_to": "KF\n 27 .J855h",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-011",
+      "lc_from": "KF\n 27 .J855",
+      "lc_to": "KF\n 27 .T7",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-012",
+      "lc_from": "KF\n 27 .T72",
+      "lc_to": "KF\n 27.5 .V67",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-013",
+      "lc_from": "KF\n 29 .U5",
+      "lc_to": "KF\n 29 .U5",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-014",
+      "lc_from": "KF\n 29 .U5",
+      "lc_to": "KF\n 29 .U5",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-015",
+      "lc_from": "KF\n 29 .U5",
+      "lc_to": "KF\n 29 .U5",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-016",
+      "lc_from": "KF\n 29 .U5",
+      "lc_to": "KF",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-017",
+      "lc_from": "KF",
+      "lc_to": "KF",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-018",
+      "lc_from": "KF\n 35 0A2r",
+      "lc_to": "KF\n 35 .A25",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-019",
+      "lc_from": "KF\n 35 .A25",
+      "lc_to": "KF\n 35 .A25",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-020",
+      "lc_from": "KF\n 35 .A25",
+      "lc_to": "KF\n 35 .A25",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-021",
+      "lc_from": "KF\n 35 .A26",
+      "lc_to": "KF\n 35 .A26",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-022",
+      "lc_from": "KF\n 35 .A26",
+      "lc_to": "KF\n 35 .A26",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-023",
+      "lc_from": "KF\n 35 .A26",
+      "lc_to": "KF\n 35 .A26",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-024",
+      "lc_from": "KF\n 35 .A26",
+      "lc_to": "KF\n 35 .A26",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-025",
+      "lc_from": "KF\n 35 .A26",
+      "lc_to": "KF\n 35 .A26",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-026",
+      "lc_from": "KF\n 35 .A26",
+      "lc_to": "KF\n 35 .A26",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-027",
+      "lc_from": "KF\n 35 .A26",
+      "lc_to": "KF\n 35 .A26",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-028",
+      "lc_from": "KF 35 .A26",
+      "lc_to": "KF\n 35 .A26",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-029",
+      "lc_from": "KF",
+      "lc_to": "KF",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-030",
+      "lc_from": "KF\n 40 .H8",
+      "lc_to": "KF\n 45 .D63",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-031",
+      "lc_from": "KF\n 47 1983 .B45",
+      "lc_to": "KF\n 47 .M5",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-032",
+      "lc_from": "KF\n 50 .U5",
+      "lc_to": "KF\n 70 .A18",
+      "location": "rrmez",
+      "floor": 3
+    },
+    {
+      "label": "3-033",
+      "lc_from": "KF\n 70 .A2",
+      "lc_to": "KF\n 85 .S9",
+      "location": "rrmez",
+      "floor": 3
+    }
+  ]
+}
